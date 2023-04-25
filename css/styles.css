@@ -87,6 +87,7 @@ ul {
   position: relative;
   display: block;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus {
@@ -104,6 +105,7 @@ ul {
 }
 .current.header-link {
   color: var(--color-ocean);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .current.header-link::after,
 .header-link:hover::after,
@@ -202,7 +204,8 @@ ul {
   border: 1px solid #e7e9fc;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-btn:hover,
 .filter-btn:focus {
@@ -232,9 +235,6 @@ ul {
 .portfolio-item {
   width: calc((100% - 48px) / 3);
 }
-.portfolio-item:hover .overlay {
-  transform: translateY(0);
-}
 .portfolio-img {
   display: block;
 }
@@ -254,7 +254,7 @@ ul {
   padding-left: 32px;
   padding-right: 32px;
 
-  transition: transform 500ms;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-overlay {
   color: var(--color-cloud);
@@ -267,10 +267,11 @@ ul {
   display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-link:hover,
+.portfolio-link:hover .overlay,
 .portfolio-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transform: translateY(0);
 }
 .portfolio-card-content {
   padding: 32px 16px;
@@ -462,7 +463,7 @@ ul {
 }
 .customers-link:hover,
 .customers-link:focus {
-  border: 1px solid #404bbf;
+  border-color: #404bbf;
   color: var(--color-ocean);
 }
 .customers-link {
@@ -474,7 +475,8 @@ ul {
   color: var(--color-lightslate);
   border: 1px solid #8e8f99;
   border-radius: 4px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-icon {
   fill: currentColor;
@@ -546,7 +548,7 @@ ul {
   align-items: center;
   background-color: var(--color-iris);
   border-radius: 50%;
-  transition: background-color 250ms linear;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link-social:hover,
 .footer-link-social:focus {
@@ -605,4 +607,9 @@ ul {
   background-color: var(--color-ocean);
 }
 .modal-icon {
+  color: var(--color-navybluemodal);
+}
+.modal-icon:hover,
+.modal-icon:focus {
+  fill: var(--color-white);
 }
