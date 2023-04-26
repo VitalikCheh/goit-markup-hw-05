@@ -87,7 +87,6 @@ ul {
   position: relative;
   display: block;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus {
@@ -102,6 +101,7 @@ ul {
   position: absolute;
   left: 0;
   bottom: -1px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .current.header-link {
   color: var(--color-ocean);
@@ -268,7 +268,7 @@ ul {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover .overlay,
-.portfolio-link:focus {
+.portfolio-link:focus .overlay {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   transform: translateY(0);
@@ -566,6 +566,8 @@ ul {
   right: 0;
   bottom: 0;
   background: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
   opacity: 0;
@@ -594,22 +596,18 @@ ul {
   display: block;
   right: 24px;
   top: 24px;
-  background: #e7e9fc;
+  background-color: #e7e9fc;
+  fill: var(--color-navybluemodal);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
   width: 24px;
   height: 24px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: var(--color-ocean);
-}
-.modal-icon {
-  color: var(--color-navybluemodal);
-}
-.modal-icon:hover,
-.modal-icon:focus {
   fill: var(--color-white);
 }
